@@ -68,7 +68,6 @@ router.post('/login', async (req, res) => {
 		if (!isPasswordCorrect)
 			return res.status(400).json({ errors: { msg: 'Invalid Credentials' } });
 
-		//Maybe should not store the email in the token
 		const token = jwt.sign(
 			{ id: user._id, email: user.email, name: user.name, department: user.department },
 			config.get('jwtSecret')
