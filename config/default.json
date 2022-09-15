@@ -1,0 +1,4 @@
+{
+    "mongoURI": "mongodb+srv://gicTeam5hackathon:gicTeam5@gicteam5.ylalevp.mongodb.net/?retryWrites=true&w=majority",
+    "jwtSecret": "mysecrettoken"
+}
