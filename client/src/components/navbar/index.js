@@ -2,7 +2,7 @@ import React from 'react'
 import './index.css'
 import Logo from '../../asset/GIC.png'
 
-const Navbar = () => {
+function Navbar() {
   return (
     <div className="row">
       <div className="navWrapper">

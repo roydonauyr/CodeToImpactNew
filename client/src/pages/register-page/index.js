@@ -8,7 +8,7 @@ import Girl from '../../asset/signin_girl.png'
 import './index.css'
 
 const cookies = new Cookies()
-const Register = () => {
+function Register() {
   const [register, setRegister] = useState({})
   const [error, setError] = useState({})
   const refInput = useRef()
@@ -20,7 +20,7 @@ const Register = () => {
       const axiosConfig = {
         headers: { 'Content-Type': 'application/json' },
       }
-      let postData = {
+      const postData = {
         email: refInput.current[0].value,
         name: refInput.current[1].value,
         password: refInput.current[2].value,
@@ -32,11 +32,11 @@ const Register = () => {
         .then((response) => {
           setRegister(response)
           console.log(response)
-          //Navigation
-          //navigate()
+          // Navigation
+          // navigate()
         })
-    } catch (error) {
-      setError(error)
+    } catch (err) {
+      setError(err)
     }
   }
   return (
@@ -46,7 +46,7 @@ const Register = () => {
         <div className="RegContainer">
           <div className="RegInfo">
             <b>Sign up for</b>
-            <span class="eldercare">
+            <span className="eldercare">
               <span>E</span>
               <span>l</span>
               <span>d</span>
@@ -67,7 +67,7 @@ const Register = () => {
             </c>
           </div>
           <div className="girl">
-            <img className="girl" src={Girl} alt="girl"></img>
+            <img className="girl" src={Girl} alt="girl" />
           </div>
           <div className="Register">
             <h1>Sign Up</h1>
@@ -98,7 +98,11 @@ const Register = () => {
               />
             </form>
 
-            <button className="RegisterButton" onClick={handleClick}>
+            <button
+              type="button"
+              className="RegisterButton"
+              onClick={handleClick}
+            >
               Register
             </button>
             {register.email && <div>{register.name} has been registered! </div>}

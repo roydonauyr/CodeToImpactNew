@@ -1,4 +1,4 @@
-//This is the login front and back end integration code
+// This is the login front and back end integration code
 import React, { useState, useRef } from 'react'
 import axios from 'axios'
 import Cookies from 'universal-cookie'
@@ -7,10 +7,11 @@ import { useNavigate } from 'react-router-dom'
 import Navbar from '../../components/navbar'
 import Footer from '../../components/footer'
 import Girl from '../../asset/signin_girl.png'
-import './index.css?v=1'
+import './index.css'
+
 const cookies = new Cookies()
 
-const Login = () => {
+function Login() {
   const refEmail = useRef('')
   const refPassword = useRef('')
   const navigate = useNavigate()
@@ -23,13 +24,13 @@ const Login = () => {
 
   const handleClick = async () => {
     try {
-      let axiosConfig = {
+      const axiosConfig = {
         headers: {
           'Content-Type': 'application/json',
         },
       }
 
-      let postData = {
+      const postData = {
         email: refEmail.current.value,
         password: refPassword.current.value,
       }
@@ -46,16 +47,16 @@ const Login = () => {
             } else {
               console.log('login error')
             }
-            //Handle navigation
-            //navigate()
+            // Handle navigation
+            // navigate()
           },
           (reason) => {
             console.error(reason)
             setError('Invalid Username or Password!')
           }
         )
-    } catch (error) {
-      console.log(error)
+    } catch (err) {
+      console.log(err)
     }
   }
 
@@ -66,7 +67,7 @@ const Login = () => {
         <div className="LoginContainer">
           <div className="LoginInfo">
             <b>Sign in to</b>
-            <span class="eldercare">
+            <span className="eldercare">
               <span>E</span>
               <span>l</span>
               <span>d</span>
@@ -78,7 +79,7 @@ const Login = () => {
               <span>e</span>
             </span>
             <c>
-              <p>Don't have an account yet?</p>
+              <p>Don&apos;t have an account yet?</p>
               <d>Create an account</d>
               <a href="/register" className="register">
                 {' '}
@@ -87,7 +88,7 @@ const Login = () => {
             </c>
           </div>
           <div className="girl">
-            <img className="girl" src={Girl} alt="girl"></img>
+            <img className="girl" src={Girl} alt="girl" />
           </div>
           <div className="Login">
             <h1>Sign in</h1>
@@ -106,14 +107,18 @@ const Login = () => {
                 name="password"
                 placeholder="Password"
               />
-              <button className="showPass" onClick={togglePassword}>
-                <i class="gg-eye"></i>
+              <button
+                type="button"
+                className="showPass"
+                onClick={togglePassword}
+              >
+                <i className="gg-eye" />
               </button>
             </div>
             <a href="forget_password_url" className="forgetPass">
               Forgot your password?
             </a>
-            <button className="loginButton" onClick={handleClick}>
+            <button type="button" className="loginButton" onClick={handleClick}>
               Log in
             </button>
             {error ? <div>{error}</div> : null}

@@ -1,11 +1,13 @@
 const express = require('express')
-const router = express.Router()
-const User = require('../../models/User')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
+const cookieParser = require('cookie-parser')
 
 const verifyToken = require('../../utils/verifyToken')
-const cookieParser = require('cookie-parser')
+
+const User = require('../../models/User')
+
+const router = express.Router()
 
 // @route POST auth/register
 // @descr Register User to DB
@@ -30,11 +32,11 @@ router.post('/register', async (req, res) => {
     const hash = await bcrypt.hash(req.body.password, salt)
     user.password = hash
 
-    //Saving to the db
+    // Saving to the db
     await user.save()
     console.log('User registered')
 
-    //Storing JWT in cookies to authenticate user
+    // Storing JWT in cookies to authenticate user
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET || 'secret')
     const { password, ...others } = user._doc
     res
@@ -51,7 +53,7 @@ router.post('/register', async (req, res) => {
   }
 })
 
-//Logging in the user
+// Logging in the user
 router.post('/login', async (req, res) => {
   try {
     const user = await User.findOne({ email: req.body.email })
@@ -104,7 +106,7 @@ router.post('/logout', (req, res) => {
   }
 })
 
-//Checking if the user token is in cookies, return user id
+// Checking if the user token is in cookies, return user id
 router.get('/check', verifyToken, (req, res) => {
   console.log(req.user)
   return res.status(200).json({
