@@ -1,6 +1,6 @@
 // This is the login front and back end integration code
-import Navbar from '../../components/navbar'
-import Sidebar from '../../components/sidebar'
+import Navbar from '../../components/navbar/index'
+import Sidebar from '../../components/sidebar/index'
 import './index.css'
 
 function Dashboard() {

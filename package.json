@@ -14,7 +14,7 @@
     "lint": "eslint ./server --config ./server/.eslintrc.js",
     "lint:fix": "eslint ./server --config ./server/.eslintrc.js --fix",
     "client": "npm start --prefix client",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --verbose --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "repository": {
     "type": "git",
