@@ -1,42 +1,72 @@
-import React, {useState} from 'react';
-import { Panels } from './panels';
-import { FaBars } from 'react-icons/fa';
-import { AiOutlineClose } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
-import './index.css';
+import React, { useState } from 'react'
+import { FaBars } from 'react-icons/fa'
+import { AiOutlineClose } from 'react-icons/ai'
+import { Route } from 'react-router-dom'
+import './index.css'
+import ProfilePic from '../../Asset/gic-logo.png'
+import { Panels } from './panels'
 
-const Sidebar = () => {
-    const [sidebar, setSidebar] = useState(false);
-    const showSidebar = () => setSidebar(!sidebar);
+function Sidebar() {
+  const [sidebar, setSidebar] = useState(false)
+  const showSidebar = () => setSidebar(!sidebar)
 
   return (
     <>
-        <div className='navbar'>
-          <Link to='#' className='menu-bars'>
-            <FaBars onClick={showSidebar} />
-          </Link>
+      <div className="navbar">
+        <div to="" className="menu-bars">
+          <FaBars onClick={showSidebar} />
         </div>
-        <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
-          <ul className='nav-menu-items' onClick={showSidebar}>
-            <li className='navbar-toggle'>
-              <Link to='#' className='menu-bars'>
-                <AiOutlineClose />
-              </Link>
-            </li>
-            {Panels.map((item, index) => {
-              return (
-                <li key={index} className={item.cName}>
-                  <Link to={item.path}>
-                    {item.icon}
-                    <span>{item.title}</span>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
-    </>
-  );
-};
+      </div>
+      <button
+        type="button"
+        className={sidebar ? 'nav-menu active' : 'nav-menu'}
+        onClick={() => {}}
+        onKeyDown={showSidebar}
+      >
+        <ul className="nav-menu-items">
+          <li className="navbar-toggle">
+            <div to="#" className="menu-bars">
+              <AiOutlineClose />
+            </div>
+          </li>
 
-export default Sidebar;
+          <li className="team">
+            <div className="title">Team</div>
+            <div className="team-content">
+              <img className="team-pic" src={ProfilePic} alt="Team Pic" />
+              <div className="team-info">
+                <div className="group-text">Private Equity</div>
+                <div className="count-text">18 team members</div>
+              </div>
+            </div>
+          </li>
+
+          <div className="line" />
+
+          <li className="profile">
+            <div className="title">Profile</div>
+            <div className="profile-content">
+              <img className="profile-pic" src={ProfilePic} alt="Profile Pic" />
+              <div className="profile-name">User Name</div>
+            </div>
+          </li>
+          <div className="line" />
+          <li className="module">
+            <div className="title">Module</div>
+            {Panels.map((item) => (
+              <li className={item.cName}>
+                <Route to={item.path}>
+                  {item.icon}
+                  <span>{item.title}</span>
+                </Route>
+              </li>
+            ))}
+          </li>
+          <div className="line" />
+        </ul>
+      </button>
+    </>
+  )
+}
+
+export default Sidebar
