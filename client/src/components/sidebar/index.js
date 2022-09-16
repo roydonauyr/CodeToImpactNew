@@ -4,7 +4,7 @@ import { AiOutlineClose } from 'react-icons/ai'
 
 import { Link } from 'react-router-dom'
 import './index.css'
-import ProfilePic from '../../Asset/gic-logo.png'
+import ProfilePic from '../../assets/gic-logo.png'
 import { panels } from './panels'
 
 function Sidebar() {

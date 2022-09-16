@@ -1,6 +1,6 @@
 import React from 'react'
 import './index.css'
-import Logo from '../../Asset/gic-logo-white.png'
+import Logo from '../../assets/gic-logo-white.png'
 
 function Banner() {
   return (
