@@ -1,12 +1,16 @@
-.menu-bars {
-    margin-left: 2rem;
-    font-size: 2rem;
-    background: none;
+ul li {
+    list-style-type: none;
+}
+
+.modules{
+    display: flex;
+    flex-direction: column;
+    margin-right: 16px;
 }
 
 .nav-menu {
     background-color: white;
-    width: 250px;
+    width: 270px;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -25,7 +29,8 @@
     display: flex;
     justify-content: start;
     align-items: center;
-    padding: 8px 0px 8px 16px;
+    padding: 0 1rem 0 5px;
+    margin: 0 0 0 0;
     list-style: none;
     height: 60px;
 }
@@ -38,7 +43,6 @@
     height: 100%;
     display: flex;
     align-items: center;
-    padding: 0 16px;
     border-radius: 4px;
 }
 
@@ -49,6 +53,7 @@
 
 .nav-menu-items {
     width: 100%;
+    padding: 1rem 1rem;
 }
 
 .navbar-toggle {
@@ -58,6 +63,116 @@
     display: flex;
     justify-content: start;
     align-items: center;
+}
+
+.line{
+    fill: solid #B2B2B2;
+    width: 80%;
+    opacity: 0.2;
+    border: solid #B2B2B2;
+}
+
+.title{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #B2B2B2;
+    height:19px;
+}
+
+.team {
+    display: flex;
+    flex-direction: column;
+    margin-right: 16px;
+}
+
+.team-content {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    flex: horizontal;
+    height: 50px;
+    align-items: center;
+}
+
+.team-info {
+    margin-left: 3px;
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 50px;
+    align-items: center;
+}
+
+.group-text{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 22px;
+    color: black;
+}
+
+.count-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 19px;
+    color: #B2B2B2;
+    width: 100%
+}
+
+.team-pic {
+    object-fit: cover;
+    border-radius: 7px;
+    height: 30px;
+    width: 30px;
+}
+
+.team-name {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 22px;
+    margin-left: 5px;
+    letter-spacing: -0.5px;
+}
+
+.profile{
+    display:flex;
+    flex-direction: column;
+    margin-right: 16px;
+}
+
+.profile-content{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    flex-direction: row;
+    height: 50px;
+    align-items: center;
+}
+
+.profile-pic {
+    object-fit: cover;
+    border-radius: 30%;
+    height: 30px;
+    width: 30px;
+}
+
+.profile-name {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 22px;
+    margin-left: 5px;
+    letter-spacing: -0.5px;
 }
 
 span {

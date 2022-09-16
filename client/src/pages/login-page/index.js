@@ -78,7 +78,7 @@ function Login() {
               <span>e</span>
             </span>
             <c>
-              <p>Don&apos;t have an account yet?</p>
+              <p>Do not have an account yet?</p>
               <d>Create an account</d>
               <a href="/register" className="register">
                 {' '}

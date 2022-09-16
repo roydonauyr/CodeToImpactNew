@@ -1,15 +1,22 @@
-// This is the login front and back end integration code
-import Navbar from '../../components/navbar/index'
-import Sidebar from '../../components/sidebar/index'
+import React, { useState, useRef } from 'react'
+import axios from 'axios'
+
+import Navbar from '../../components/navbar'
+import Sidebar from '../../components/sidebar'
+import Banner from '../../components/banner'
 import './index.css'
 
-function Dashboard() {
+function DashBoard() {
+  const [passwordShown, setPasswordShown] = useState(false)
+
+  const handleClick = async () => {}
   return (
     <>
       <Navbar />
+      <Banner />
       <Sidebar />
     </>
   )
 }
 
-export default Dashboard
+export default DashBoard
