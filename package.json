@@ -9,7 +9,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write './**/*.{js,jsx,css,md,json}' --config ./.prettierrc.js",
     "lint": "eslint ./server --config ./server/.eslintrc.js",
-    "lint:fix": "eslint ./server --config ./server/.eslintrc.js --fix"
+    "lint:fix": "eslint ./server --config ./server/.eslintrc.js --fix",
+    "client": "npm start --prefix client",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "repository": {
     "type": "git",
