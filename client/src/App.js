@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-import Register from './Pages/Register';
-import Login from './Pages/Login';
-import DashBoard from './Pages/DashBoard';
+import Register from './Pages/register-page';
+import Login from './Pages/login-page';
+import DashBoard from './Pages/dashboard-page';
 
 import './App.css'
 

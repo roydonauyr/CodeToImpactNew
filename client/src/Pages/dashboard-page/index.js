@@ -4,9 +4,9 @@ import axios from 'axios';
 import Cookies from 'universal-cookie';
 
 import { useNavigate } from 'react-router-dom';
-import Navbar from '../Component/Navbar';
-import Sidebar from '../Component/SideBar/Sidebar';
-import '../Style/Login.css?v=1';
+import Navbar from '../../components/navbar';
+import Sidebar from '../../components/sidebar';
+import './index.css';
 const cookies = new Cookies();
 
 const Login = () => {

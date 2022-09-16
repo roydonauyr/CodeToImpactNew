@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import { Panels } from './Panels';
+import { Panels } from './panels';
 import { FaBars } from 'react-icons/fa';
 import { AiOutlineClose } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-import '../../Style/Sidebar.css';
+import './index.css';
 
 const Sidebar = () => {
     const [sidebar, setSidebar] = useState(false);
