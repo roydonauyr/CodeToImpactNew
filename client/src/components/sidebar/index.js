@@ -38,15 +38,16 @@ function Sidebar() {
 
           <div className="line" />
 
+
           <li className="profile">
             <div className="title">Profile</div>
             <div className="profile-content">
               <img className="profile-pic" src={ProfilePic} alt="Profile Pic" />
-              <div className="profile-name">name</div>
+              <div className="profile-name">Name</div>
             </div>
           </li>
           <div className="line" />
-          <li className="module">
+          <li className="modules">
             <div className="title">Module</div>
             <ul>
               {panels.map((item) => (
