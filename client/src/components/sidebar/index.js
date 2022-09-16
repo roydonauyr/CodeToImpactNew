@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { FaBars } from 'react-icons/fa'
 import { AiOutlineClose } from 'react-icons/ai'
-import { Route } from 'react-router-dom'
+
+import { Link } from 'react-router-dom'
 import './index.css'
 import ProfilePic from '../../Asset/gic-logo.png'
-import { Panels } from './panels'
+import { panels } from './panels'
 
 function Sidebar() {
   const [sidebar, setSidebar] = useState(false)
@@ -17,19 +18,13 @@ function Sidebar() {
           <FaBars onClick={showSidebar} />
         </div>
       </div>
+
       <button
         type="button"
         className={sidebar ? 'nav-menu active' : 'nav-menu'}
-        onClick={() => {}}
-        onKeyDown={showSidebar}
+        onClick={showSidebar}
       >
         <ul className="nav-menu-items">
-          <li className="navbar-toggle">
-            <div to="#" className="menu-bars">
-              <AiOutlineClose />
-            </div>
-          </li>
-
           <li className="team">
             <div className="title">Team</div>
             <div className="team-content">
@@ -47,20 +42,22 @@ function Sidebar() {
             <div className="title">Profile</div>
             <div className="profile-content">
               <img className="profile-pic" src={ProfilePic} alt="Profile Pic" />
-              <div className="profile-name">User Name</div>
+              <div className="profile-name">name</div>
             </div>
           </li>
           <div className="line" />
           <li className="module">
             <div className="title">Module</div>
-            {Panels.map((item) => (
-              <li className={item.cName}>
-                <Route to={item.path}>
-                  {item.icon}
-                  <span>{item.title}</span>
-                </Route>
-              </li>
-            ))}
+            <ul>
+              {panels.map((item) => (
+                <li key={item.id} className={item.cName}>
+                  <Link to={item.path}>
+                    {item.icon}
+                    <span>{item.title}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </li>
           <div className="line" />
         </ul>
