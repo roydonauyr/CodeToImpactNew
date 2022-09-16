@@ -27,7 +27,7 @@ function Register() {
       }
 
       axios
-        .post('/api/auth/register', postData, axiosConfig)
+        .post('/api/users/register', postData, axiosConfig)
         .then((response) => {
           setRegister(response)
           console.log(response)

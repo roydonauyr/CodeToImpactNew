@@ -35,7 +35,7 @@ function Login() {
       }
 
       axios
-        .post(`/api/auth/login`, postData, axiosConfig, {
+        .post(`/api/users/login`, postData, axiosConfig, {
           withCredentials: true,
           crendentials: true,
         })
