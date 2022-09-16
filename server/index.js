@@ -17,6 +17,11 @@ app.use(cors())
 app.use(cookieParser())
 
 app.use('/api/users', require('./routes/userRoutes'))
+app.use('/api/instruments', require('./routes/instrumentRoutes'))
+app.use('/api/marketValuations', require('./routes/marketValuationRoutes'))
+app.use('/api/transactions', require('./routes/transactionRoutes'))
+app.use('/api/investments', require('./routes/investmentRoutes'))
+app.use('/api/analytics', require('./routes/analyticRoutes'))
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')))
