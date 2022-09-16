@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use(cors())
 app.use(cookieParser())
 
-app.user('/api/users', require('./routes/userRoutes'))
+app.use('/api/users', require('./routes/userRoutes'))
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')))
@@ -25,6 +25,6 @@ if (process.env.NODE_ENV === 'production') {
   })
 }
 
-app.user(errorHandler)
+app.use(errorHandler)
 
 app.listen(PORT, () => console.log(`Express server listening on port ${PORT}`))
