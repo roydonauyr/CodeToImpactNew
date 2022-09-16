@@ -1,11 +1,10 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Register from './Pages/Register';
 import Login from './Pages/Login';
 import DashBoard from './Pages/DashBoard';
 
-import "./App.css";
+import './App.css'
 
 function App() {
 	return (
@@ -19,4 +18,4 @@ function App() {
 	);
 }
 
-export default App;
+export default App
