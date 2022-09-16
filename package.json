@@ -3,13 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "16"
+  },
   "scripts": {
     "start": "node server/index.js",
     "dev": "nodemon server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write './**/*.{js,jsx,css,md,json}' --config ./.prettierrc.js",
     "lint": "eslint ./server --config ./server/.eslintrc.js",
-    "lint:fix": "eslint ./server --config ./server/.eslintrc.js --fix"
+    "lint:fix": "eslint ./server --config ./server/.eslintrc.js --fix",
+    "client": "npm start --prefix client",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --verbose --prefix client"
   },
   "repository": {
     "type": "git",
@@ -33,7 +38,6 @@
   },
   "devDependencies": {
     "eslint": "^8.23.1",
-    "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-node": "^4.1.0",
     "eslint-config-prettier": "^8.5.0",

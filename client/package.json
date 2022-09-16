@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:8000/",
+  "engines": {
+    "node": "16"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -25,12 +28,6 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -45,6 +42,6 @@
   },
   "devDependencies": {
     "eslint": "^8.23.1",
-    "eslint-plugin-react": "^7.31.8"
+    "eslint-config-airbnb": "^19.0.4"
   }
 }
