@@ -18,5 +18,12 @@ module.exports = {
     'react/jsx-filename-extension': 'off',
     'react/react-in-jsx-scope': 'off',
     'no-unused-vars': 'warn',
+    'react/no-array-index-key': 'warn',
+    'jsx-a11y/anchor-is-valid': [
+      'error',
+      {
+        components: ['a'],
+      },
+    ],
   },
 }

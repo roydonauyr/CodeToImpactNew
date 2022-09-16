@@ -1,66 +1,70 @@
-//This is the login front and back end integration code
-import React, { useState, useRef } from 'react';
-import axios from 'axios';
-import Cookies from 'universal-cookie';
+// This is the login front and back end integration code
+import React, { useState, useRef } from 'react'
+import axios from 'axios'
+import Cookies from 'universal-cookie'
 
-import { useNavigate } from 'react-router-dom';
-import Navbar from '../../components/navbar';
-import Sidebar from '../../components/sidebar';
-import './index.css';
-const cookies = new Cookies();
+import { useNavigate } from 'react-router-dom'
+import Navbar from '../../components/navbar'
+import Sidebar from '../../components/sidebar'
+import './index.css'
 
-const Login = () => {
-	const refEmail = useRef('');
-	const refPassword = useRef('');
-	const navigate = useNavigate();
-	const [passwordShown, setPasswordShown] = useState(false);
-	const [error,setError]=useState();
+const cookies = new Cookies()
 
-	const togglePassword = () => {
-		setPasswordShown(!passwordShown);
-	};
+function Login() {
+  const refEmail = useRef('')
+  const refPassword = useRef('')
+  const navigate = useNavigate()
+  const [passwordShown, setPasswordShown] = useState(false)
+  const [error, setError] = useState()
 
-	const handleClick = async () => {
-		try {
-			let axiosConfig = {
-				headers: {
-					'Content-Type': 'application/json',
-				},
-			};
+  const togglePassword = () => {
+    setPasswordShown(!passwordShown)
+  }
 
-			let postData = {
-				email: refEmail.current.value,
-				password: refPassword.current.value,
-			};
+  const handleClick = async () => {
+    try {
+      const axiosConfig = {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }
 
-			axios
-				.post(`/api/auth/login`, postData, axiosConfig, {
-					withCredentials: true,
-					crendentials: true,
-				})
-				.then((response) => {
-					if (response.status === 200) {
-						cookies.set('access_token', response.data, { path: '/' });
-					}
-					else {
-						console.log("login error")
-					}
-                    //Handle navigation
-                    navigate('/dashboard')
-				}, reason => {
-					console.error(reason);
-				  	setError('Invalid Username or Password!')});
-		} catch (error) {
-			console.log(error);
-		}
-	};
+      const postData = {
+        email: refEmail.current.value,
+        password: refPassword.current.value,
+      }
 
-	return (
-		<>
-			<Navbar />
-			<Sidebar />
-		</>
-	);
-};
+      axios
+        .post(`/api/auth/login`, postData, axiosConfig, {
+          withCredentials: true,
+          crendentials: true,
+        })
+        .then(
+          (response) => {
+            if (response.status === 200) {
+              cookies.set('access_token', response.data, { path: '/' })
+            } else {
+              console.log('login error')
+            }
+            // Handle navigation
+            navigate('/dashboard')
+          },
+          (reason) => {
+            console.error(reason)
+            setError('Invalid Username or Password!')
+          }
+        )
+    } catch (err) {
+      console.log(err)
+    }
+  }
 
-export default Login;
+  return (
+    <>
+      <Navbar />
+      <Sidebar />
+    </>
+  )
+}
+
+export default Login

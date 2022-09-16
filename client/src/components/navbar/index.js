@@ -1,6 +1,6 @@
 import React from 'react'
 import './index.css'
-import Logo from '../../Asset/GIC.png'
+import Logo from '../../asset/GIC.png'
 
 function Navbar() {
   return (
