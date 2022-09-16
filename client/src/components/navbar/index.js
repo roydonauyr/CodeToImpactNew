@@ -1,13 +1,13 @@
 import React from 'react'
 import './index.css'
-import Logo from '../../asset/GIC.png'
+// import Logo from '../../asset/GIC.png'
 
 function Navbar() {
   return (
     <div className="row">
       <div className="navWrapper">
         <div className="navLogo">
-          <img className="logo" src={Logo} alt="Logo" />
+          {/* <img className="logo" src={Logo} alt="Logo" /> */}
           <div>hello this is the navbar testing</div>
         </div>
       </div>
