@@ -4,10 +4,9 @@ import axios from 'axios';
 import Cookies from 'universal-cookie';
 
 import { useNavigate } from 'react-router-dom';
-import Navbar from './Navbar';
-import Footer from './Footer';
-import Girl from '../Asset/signin_girl.png'
-import './Login.css?v=1';
+import Navbar from '../Component/Navbar';
+import Footer from '../Component/Footer';
+import '../Style/Login.css?v=1';
 const cookies = new Cookies();
 
 const Login = () => {
@@ -47,7 +46,7 @@ const Login = () => {
 						console.log("login error")
 					}
                     //Handle navigation
-                    //navigate()
+                    navigate('/dashboard')
 				}, reason => {
 					console.error(reason);
 				  	setError('Invalid Username or Password!')});
@@ -69,9 +68,6 @@ const Login = () => {
 							<d>Create an account</d>
 							<a href="/register" className="register"> here!</a>
 						</c>	
-					</div>
-					<div className='girl'>
-						<img className='girl' src={Girl} alt='girl'></img>
 					</div>
 					<div className='Login'>
 						<h1>Sign in</h1>

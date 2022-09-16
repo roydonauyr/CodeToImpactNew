@@ -2,10 +2,9 @@ import React, { useState, useRef } from 'react';
 import axios from 'axios';
 import Cookies from 'universal-cookie';
 import { useNavigate } from 'react-router-dom';
-import Navbar from './Navbar';
-import Footer from './Footer';
-import Girl from '../Asset/signin_girl.png';
-import './Register.css';
+import Navbar from '../Component/Navbar';
+import Footer from '../Component/Footer';
+import '../Style/Register.css';
 
 const cookies = new Cookies();
 const Register = () => {
@@ -64,9 +63,6 @@ const Register = () => {
 								here!
 							</a>
 						</c>
-					</div>
-					<div className='girl'>
-						<img className='girl' src={Girl} alt='girl'></img>
 					</div>
 					<div className='Register'>
 						<h1>Sign Up</h1>
