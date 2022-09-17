@@ -47,7 +47,7 @@ function Sidebar() {
             </div>
           </li>
           <div className="line" />
-          <li className="modules">
+          <li>
             <div className="title">Module</div>
             <ul>
               {panels.map((item) => (

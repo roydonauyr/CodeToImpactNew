@@ -3,8 +3,6 @@ ul li {
 }
 
 .module{
-    margin: 1px;
-    padding: 1px;
 }
 
 .nav-menu {
@@ -79,9 +77,9 @@ ul li {
 
 
 .title{
-    font-family: 'Inter';
+    
     font-style: normal;
-    font-weight: 400;
+    font-weight: 450;
     font-size: 15px;
     text-transform: uppercase;
     color: #B2B2B2;
@@ -120,19 +118,17 @@ ul li {
 }
 
 .group-text{
-    font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 17px;
     line-height: 22px;
     color: black;
 }
 
 .count-text {
-    font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
-    font-size: 10px;
+    font-size: 14px;
     line-height: 19px;
     color: #B2B2B2;
     width: 100%
@@ -144,16 +140,15 @@ ul li {
     height: 50px;
     width: 50px;
     padding-bottom: 10px;
-    padding-left: 5px;
+    padding-left: 8px;
     padding-right: 10px;
 }
 
 .team-name {
-    font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
     padding: 8px;
-    font-size: 20px;
+    font-size: 25px;
     line-height: 22px;
     margin-left: 5px;
     letter-spacing: -0.5px;
@@ -182,14 +177,13 @@ ul li {
     height: 50px;
     width: 50px;
     padding-bottom: 10px;
-    padding-left: 5px;
+    padding-left: 8px;
     padding-right: 10px;
 }
 
 
 
 .profile-name {
-    font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
