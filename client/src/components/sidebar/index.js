@@ -38,7 +38,6 @@ function Sidebar() {
 
           <div className="line" />
 
-
           <li className="profile">
             <div className="title">Profile</div>
             <div className="profile-content">
