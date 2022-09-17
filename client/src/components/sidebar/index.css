@@ -4,6 +4,8 @@ ul li {
 
 .module{
     margin: 8px;
+    padding: 8px;
+    
 }
 
 .nav-menu {
@@ -16,6 +18,8 @@ ul li {
     top: 0;
     left: -100%;
     transition: 850ms;
+    border: 0;
+
 }
 
 .nav-menu.active {
@@ -82,6 +86,8 @@ ul li {
     color: #B2B2B2;
     height:19px;
     text-align:left;
+    padding-left: 8px;
+    padding-top: 10px;
 }
 
 .team {
